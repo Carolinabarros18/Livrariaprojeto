@@ -34,6 +34,16 @@ public class VendedorController {
             vendedorBuscado.getNome(), vendedorBuscado.getEndereco(), vendedorBuscado.isStatus() ? "1 - Ativo" : "2 - Inativo"});
     }
     
+    
+     public void listarPorCPF(DefaultTableModel modeloTabela, int CPF) {
+        modeloTabela.setNumRows(0);
+        Vendedor vendedorBuscado = vDAO.buscarPorCPF(CPF);
+
+        modeloTabela.addRow(new Object[]{vendedorBuscado.getCPF(), vendedorBuscado.getCPF(),
+            vendedorBuscado.getNome(), vendedorBuscado.getEndereco(), vendedorBuscado.isStatus() ? "1 - Ativo" : "2 - Inativo"});
+    }
+    
+    
     public void salvar(DefaultTableModel modeloTabela, Vendedor vendedor, boolean novo ) {
         if( novo ) {
             vDAO.inserir(vendedor);
@@ -52,5 +62,10 @@ public class VendedorController {
         }
         this.listarTodos(modeloTabela);
     }
+
+    public void listarPorCPF(DefaultTableModel tabelaModelo, String CPF) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 
 }
