@@ -64,5 +64,13 @@ public class Livro {
     public boolean isStatus() {
         return status;
     }
+
+    public Object getISBN() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setISBN(int ISBN) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
